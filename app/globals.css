@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Montserrat:wght@700;900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+
+  --color-accent: #16a34a;
+  --color-accent-hover: #15803d;
+  --color-accent-light: #f0fdf4;
+  
+  --color-surface: #ffffff;
+  --color-surface-muted: #f0f1f4;
+  
+  --color-border-main: #e2e4e9;
+  --color-text-main: #111827;
+  --color-text-muted: #6b7280;
+  
+  --radius-xl: 12px;
+  --radius-lg: 8px;
+}
+
+@layer base {
+  html, body {
+    @apply bg-[#f7f8fa] text-text-main font-sans min-h-screen m-0 p-0;
+  }
+}
+
+@utility glass {
+  @apply bg-surface border border-border-main rounded-xl;
+}
+
+@utility btn-primary {
+  @apply bg-accent text-white rounded-lg px-7 py-3 text-[15px] font-semibold cursor-pointer transition-all duration-150 tracking-wide disabled:opacity-45 disabled:cursor-not-allowed hover:bg-accent-hover active:bg-[#1e40af];
+}
+
+@utility field-input {
+  @apply bg-white border-[1.5px] border-[#d1d5db] rounded-lg px-3.5 py-2.5 text-text-main text-sm w-full outline-none transition-all duration-150 font-sans focus:border-accent focus:ring-2 focus:ring-accent/10;
+}
+
+@utility field-label {
+  @apply text-[12px] font-semibold text-text-muted mb-1.5 tracking-wider uppercase;
+}
+
+@utility preset-card {
+  @apply cursor-pointer border-[1.5px] border-border-main rounded-lg px-4 py-3 bg-surface-muted transition-all duration-150 text-center hover:border-accent-light hover:bg-[#eff6ff];
+}
+
+@utility preset-card-selected {
+  @apply border-accent bg-[#eff6ff];
+}
+
+@utility preview-canvas {
+  @apply rounded-lg border border-border-main bg-gray-100 max-w-full;
+}
+
+/* Animations & Scrollbar */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #cbd5e1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  @keyframes dot {
+    0%, 80%, 100% { transform: scale(0.8); opacity: 0.4; }
+    40% { transform: scale(1.2); opacity: 1; }
+  }
+  .dot { display: inline-block; animation: dot 1.2s infinite ease-in-out; }
+  .dot:nth-child(2) { animation-delay: 0.15s; }
+  .dot:nth-child(3) { animation-delay: 0.3s; }
+}
+
+/* Color picker styling */
+input[type="color"] {
+  @apply w-[38px] h-[38px] border border-border-main rounded-md cursor-pointer p-0.5 bg-white;
+}
+
+/* Range input styling */
+input[type="range"] {
+  @apply appearance-none w-full h-1 bg-[#cbd5e1] rounded-sm outline-none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 rounded-full bg-accent cursor-pointer transition-transform duration-150 hover:scale-115;
+}
+
