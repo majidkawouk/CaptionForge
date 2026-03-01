@@ -137,18 +137,18 @@ export default function Home() {
   return (
     <main className="bg-[#f7f8fa] min-h-screen">
       <header className="border-b border-border-main">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 md:px-12 py-4 flex items-center justify-between">
             <span className="font-black text-xl tracking-tight">
               Caption<span className="text-accent">Forge</span>
             </span>
         </div>
       </header>
 
-      <section className="max-w-6xl mx-auto px-6 py-12 text-center">
+      <section className="max-w-6xl mx-auto px-4 md:px-12 py-10 md:py-16 text-center">
         <p className="text-[13px] font-semibold tracking-[0.15em] text-text-muted uppercase mb-4">
           Creator Tool
         </p>
-        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-none tracking-tight mb-4">
+        <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-none tracking-tight mb-3 md:mb-4">
           Animated Captions.{" "}
           <span className="text-accent">Transparent Background.</span>
         </h1>
@@ -158,9 +158,9 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section className="max-w-6xl mx-auto px-4 md:px-12 pb-12 md:pb-20 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         <div className="flex flex-col gap-5">
-          <div className="glass p-6">
+          <div className="glass p-4 md:p-6">
             <p className="field-label">Your Text</p>
             <textarea
               className="field-input resize-y"
@@ -191,7 +191,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="glass p-6">
+          <div className="glass p-4 md:p-6">
             <p className="field-label mb-3.5">Style Presets</p>
             <div className="grid grid-cols-3 gap-2.5">
               {Object.entries(PRESETS).map(([key, preset]) => (
@@ -225,7 +225,7 @@ export default function Home() {
           <div className="glass p-6 flex flex-col gap-[18px]">
             <p className="field-label mb-0">Customize</p>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <CustomDropdown
                 label="Font Family"
                 options={FONTS.map(f => ({ 
@@ -244,7 +244,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex gap-5 flex-wrap">
+            <div className="flex gap-4 md:gap-5 flex-wrap">
               <div>
                 <p className="field-label">Text Color</p>
                 <div className="flex items-center gap-2">
@@ -280,7 +280,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <p className="field-label">Font Size: {style.fontSize}px</p>
                 <input
@@ -305,7 +305,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                <div>
                   <p className="field-label">Slant / Skew: {Math.round(style.skew * 100)}%</p>
                   <input
@@ -339,8 +339,8 @@ export default function Home() {
                     }`}
                   >
                     <div
-                      className={`w-5 h-5 rounded-full bg-white absolute top-0.5 transition-all duration-200 shadow-sm ${
-                        style.uppercase ? "left-[26px]" : "left-[3px]"
+                      className={`w-5 h-5 rounded-full bg-white absolute top-1 transition-all duration-200 shadow-sm ${
+                        style.uppercase ? "left-[28px]" : "left-[4px]"
                       }`}
                     />
                   </div>
@@ -355,8 +355,8 @@ export default function Home() {
                     }`}
                   >
                     <div
-                      className={`w-5 h-5 rounded-full bg-white absolute top-0.5 transition-all duration-200 shadow-sm ${
-                        style.backgroundBox ? "left-[26px]" : "left-[3px]"
+                      className={`w-5 h-5 rounded-full bg-white absolute top-1 transition-all duration-200 shadow-sm ${
+                        style.backgroundBox ? "left-[28px]" : "left-[4px]"
                       }`}
                     />
                   </div>
@@ -367,7 +367,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col gap-5">
-          <div className="glass p-6">
+          <div className="glass p-4 md:p-6">
             <div className="flex justify-between items-center mb-3.5">
               <p className="field-label mb-0">Preview</p>
               <button
@@ -389,7 +389,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="glass p-6">
+          <div className="glass p-4 md:p-6">
             <p className="field-label mb-3.5">Export</p>
 
             {isWorking && (
@@ -435,9 +435,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-surface border-t border-border-main py-24 pb-16 mt-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <footer className="bg-surface border-t border-border-main mt-12 md:mt-20 py-12 md:py-24 pb-12 md:pb-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             <div>
               <p className="font-black text-lg mb-4">
                 Caption<span className="text-accent">Forge</span>
