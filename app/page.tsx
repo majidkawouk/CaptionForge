@@ -339,7 +339,7 @@ export default function Home() {
                     }`}
                   >
                     <div
-                      className={`w-5 h-5 rounded-full bg-white absolute top-1 transition-all duration-200 shadow-sm ${
+                      className={`w-5 h-5 rounded-full bg-white absolute top-[3px] transition-all duration-200 shadow-sm ${
                         style.uppercase ? "left-[28px]" : "left-[4px]"
                       }`}
                     />
@@ -355,7 +355,7 @@ export default function Home() {
                     }`}
                   >
                     <div
-                      className={`w-5 h-5 rounded-full bg-white absolute top-1 transition-all duration-200 shadow-sm ${
+                      className={`w-5 h-5 rounded-full bg-white absolute top-[3px] transition-all duration-200 shadow-sm ${
                         style.backgroundBox ? "left-[28px]" : "left-[4px]"
                       }`}
                     />
